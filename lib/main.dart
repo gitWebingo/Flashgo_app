@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'screens/splash_screen.dart';
+import 'screens/home_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final prefs = await SharedPreferences.getInstance();
-  final isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
-
-  runApp(FlashGoApp(isLoggedIn: isLoggedIn));
-}
+void main() => runApp(const FlashGoApp());
 
 class FlashGoApp extends StatelessWidget {
-  final bool isLoggedIn;
-
-  const FlashGoApp({super.key, required this.isLoggedIn});
+  const FlashGoApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +20,7 @@ class FlashGoApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home: const HomeScreen(),
     );
   }
 }

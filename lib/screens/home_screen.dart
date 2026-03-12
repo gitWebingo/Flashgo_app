@@ -154,25 +154,24 @@ class _HomeScreenState extends State<HomeScreen>
       child: Center(
         child: Column(
           children: [
-            Text(
-              'FLASHGO',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w300,
-                letterSpacing: 4.0,
-                color:
-                    const Color(0xFFFFD700).withValues(alpha: 0.9), // Gold text
-              ),
-            ),
-            const SizedBox(height: 8),
             Container(
-              width: 40,
-              height: 2,
-              decoration: BoxDecoration(
-                color: const Color(0xFFFFD700), // Gold underline
-                borderRadius: BorderRadius.circular(2),
+              width: 200,
+              height: 60,
+              child: Image.asset(
+                'assets/images/logo.png',
+                width: 120,
+                height: 100,
+                fit: BoxFit.contain,
               ),
             ),
+            // Container(
+            //   width: 40,
+            //   height: 2,
+            //   decoration: BoxDecoration(
+            //     color: const Color(0xFFFFD700),
+            //     borderRadius: BorderRadius.circular(2),
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -193,7 +192,6 @@ class _HomeScreenState extends State<HomeScreen>
             const SizedBox(height: 48),
             // Status Text
             _buildStatusText(),
-
             const SizedBox(height: 60),
             // Controls Section (Glassmorphic look)
             _buildControlsSection(),
